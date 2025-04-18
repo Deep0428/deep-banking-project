@@ -7,30 +7,30 @@ pipeline{
                  echo 'github url checkout'
             }
         }
-        stage('codecompile with akshat'){
+        stage('codecompile with deep'){
             steps{
                 echo 'starting compiling'
                 sh 'mvn compile'
             }
         }
-        stage('codetesting with akshat'){
+        stage('codetesting with deep'){
             steps{
                 sh 'mvn test'
             }
         }
-        stage('qa with akshat'){
+        stage('qa with deep'){
             steps{
                 sh 'mvn checkstyle:checkstyle'
             }
         }
-        stage('package with akshat'){
+        stage('package with deep'){
             steps{
                 sh 'mvn package'
             }
         }
         stage('run dockerfile'){
           steps{
-               sh 'docker build -t myimg .'
+               sh 'docker build -t banking-project.'
            }
          }
         stage('port expose'){
