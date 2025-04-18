@@ -3,7 +3,7 @@ pipeline{
     stages{
         stage('checkout the code from github'){
             steps{
-                 git url: 'https://github.com/Balunideepak/banking-project.git'
+                 git url: 'https://github.com/Deep0428/deep-banking-project.git'
                  echo 'github url checkout'
             }
         }
@@ -30,7 +30,7 @@ pipeline{
         }
         stage('run dockerfile'){
           steps{
-               sh 'docker build -t banking-project.'
+               sh 'docker build -t myimg.'
            }
          }
         stage('port expose'){
